@@ -1,0 +1,30 @@
+﻿@using static PartyInviteSite.Models.GuesResponse
+
+@{ 
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="widht=device-widht" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Thanks</title>
+</head>
+<body>
+    <div class="text-center" style="margin-top: 200px;">
+        <h1>Thank you, @Model.Name</h1> @*Вывод имени из модели, которая была указана в форме регистрации*@
+        @if (Model.WillAttend == true)@*Обычная Razor вставка, в которой реализуется условный оператор *@
+        {
+            @: Its greate that your are coming
+        }
+        else
+        {
+            @: Sorry to hear that
+        }
+        @* Click <a class="nav-link" asp-controller="Home" asp-action="ListResponses" >Here</a> to see comers *@Работает так же как и ниже
+        <p>Click <a asp-action="ListResponses">Here</a> To see list     </p>   @*Ссылка на список всех заполнивших анкету*@
+    </div>
+    
+</body>
+</html>

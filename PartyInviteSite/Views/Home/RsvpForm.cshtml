@@ -1,0 +1,65 @@
+﻿@using PartyInviteSite.Models;
+@model GuesResponse
+
+@*@model PartyInviteSite.Models.GuesResponse так тоже можно писать*@
+
+@{
+    ViewData["Title"] = "RsvpForm";
+   // Layout = null;
+}
+
+
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="widht=device-widht" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    @*<div>
+        <h4>The Page About RSVP</h4>
+    </div>*@
+    <div class="_form-panel">
+        <div class="card bg-info text-white text-center">
+            <div class="card-header">RsvpForm</div>
+        </div>
+       <div class="card-body">
+            @*p1-это отступ*@
+            <form class="p-1" asp-controller="Home" asp-action="RsvpForm" method="post">
+                @*Блок формы регистрации который отправляет пост запрос И ПРОЕРКА ВАЛИДНОСТИ*@
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                   <label asp-for="@Model.Name">Your Name</label>
+                   <input class="form-control" type="text" asp-for="@Model.Name" /> @*Таким образом ПРИВЯЗЫВАЕМ инпут к нашей модели, то есть значения будут заходить в поля модели*@
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Mail">Your Email</label>
+                    <input class="form-control" type="email" asp-for="@Model.Mail" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Phone">Your Phone</label>
+                    <input class="form-control" type="tel" asp-for="@Model.Phone" />
+                 </div>
+                    <div class="form-group">
+                        <label>Will you attend?</label>
+                        <select class="form-control" asp-for="WillAttend">
+                            <option value="">Choose an option</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary" type="submit">"Submit RSVP" </button>
+                    </div>
+                  
+            </form>
+       <form>
+             <input type="submit" asp-controller="test" asp-action="testGetAction" value="Hello?" />
+       </form>
+        </div>
+    </div>
+</body>
+</html>
+

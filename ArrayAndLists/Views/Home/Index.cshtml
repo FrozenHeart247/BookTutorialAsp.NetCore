@@ -1,0 +1,24 @@
+﻿@model Products[]
+@{ 
+    ViewBag.Title = "Product Name";
+}
+<head> <link rel="stylesheet" href="~/css/site.css" /> </head>
+    <div class="table-cout">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Products p in Model)
+                {
+                    <tr>
+                        <td>@p.Name</td>
+                        <td>@($"{p.Price:C2}")</td> @*:C2 - это формат вывода децимал*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

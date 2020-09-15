@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="widht=device-widht" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <title>PartyInviteMainPage</title>
+</head>
+<body>
+    <div class="Mycontent" style="margin-top: 200px;">
+        <div class="text-center">
+
+            <div class="date-viewbag-return">
+                @*Ебашим ретурн текущей даты системы*@
+                @ViewBag.DateReturn
+            </div>
+            @*Это хуйня чисто для прикола, типа если день, тогда зеленый цвет, если нет, то синий*@
+            @if (ViewBag.DateReturn == "Good Morning")
+            {
+                <style>
+                    .date-viewbag-return {
+                        color: chartreuse;
+                    }
+                </style>
+            }
+            else
+            {
+                <style>
+                    .date-viewbag-return {
+                        color: blue;
+                    }
+                </style>
+            }
+            <h3>The party invintation here:</h3>
+            <h4>Registration below</h4>
+            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="RsvpForm">I will come</a>
+        </div>
+    </div>
+</body>
+</html>
