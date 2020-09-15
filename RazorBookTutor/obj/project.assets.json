@@ -1945,6 +1945,22 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "[BookASP.NETcoreMVC]/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "3.0.0"
+        },
+        "compile": {
+          "bin/placeholder/[BookASP.NETcoreMVC].dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/[BookASP.NETcoreMVC].dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -6280,13 +6296,19 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "[BookASP.NETcoreMVC]/1.0.0": {
+      "type": "project",
+      "path": "../[BookASP.NETcoreMVC]/[BookASP.NETcoreMVC].csproj",
+      "msbuildProject": "../[BookASP.NETcoreMVC]/[BookASP.NETcoreMVC].csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.0.0",
       "Microsoft.Extensions.Logging.Debug >= 3.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0",
+      "[BookASP.NETcoreMVC] >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6314,7 +6336,11 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "B:\\Study\\2019-2020\\Books\\C#\\C#Projects\\[BookASP.NETcoreMVC]\\[BookASP.NETcoreMVC]\\[BookASP.NETcoreMVC].csproj": {
+              "projectPath": "B:\\Study\\2019-2020\\Books\\C#\\C#Projects\\[BookASP.NETcoreMVC]\\[BookASP.NETcoreMVC]\\[BookASP.NETcoreMVC].csproj"
+            }
+          }
         }
       },
       "warningProperties": {
